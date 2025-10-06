@@ -15,6 +15,20 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+       
+        <!-- Rol Address -->
+        <div class="mt-4">
+            <x-input-label for="rol" :value="__('¿Qué tipo de Cuenta deseas tener?')" />
+            <select 
+                name="rol" 
+                id="rol"
+                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
+            >
+                <option value="">-- Selecciona un Rol --</option>
+                <option value="1">Developer - Buscar Empleo</option>
+                <option value="2">Recruiter - Publicar Empleos</option>
+            </select>
+        </div>
 
         <!-- Password -->
         <div class="mt-4">

@@ -42,7 +42,7 @@
             <x-link
                 :href="route('password.request')"
             >
-                Crear cuenta
+                ¿Olvidaste tu Password?
             </x-link>
         </div>
         

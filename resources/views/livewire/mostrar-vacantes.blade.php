@@ -27,4 +27,8 @@
 
     @endforelse
 
+    <div class="m-5">
+        {{ $vacantes->links() }}
+    </div>
+
 </div>

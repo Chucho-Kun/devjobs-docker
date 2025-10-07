@@ -19,4 +19,8 @@ class Vacante extends Model
         'imagen',
         'user_id'
     ];
+
+    protected $casts = [
+        'ultimo_dia' => 'date'
+    ];
 }

@@ -1,4 +1,4 @@
-<form action="" class="md:w-1/2 space-y-5" wire:submit.prevent='crearVacante'>
+<form action="" class="md:w-1/2 space-y-5" wire:submit.prevent='editarVacante'>
     <div>
         <x-input-label for="titulo" :value="__('Titulo Vacante')" />
         <x-text-input id="titulo" class="block mt-1 w-full" type="text" wire:model="titulo" :value="old('titulo')"
@@ -59,27 +59,25 @@
     </div>
     <x-input-error :messages="$errors->get('descripcion')" class="border border-red-700 bg-red-100 text-red-600 font-bold uppercase p-2 mt-2 text-xs" />
 
-    {{-- <div>
-        <x-input-label for="imagen" :value="__('Imagen')" />
-        <x-text-input id="imagen" class="block mt-1 w-full" type="file" wire:model="imagen" accept="image/*" />
+    <div>
+        <x-input-label for="imagen_nueva" :value="__('Nueva Imagen')" />
+        <x-text-input id="imagen_nueva" class="block mt-1 w-full" type="file" wire:model="imagen_nueva" accept="image/*" />
     </div>
 
     <div class="my-5 w-80">
-        @if ($imagen)
-            Imagen:
-            <img src="{{ $imagen->temporaryUrl() }}" alt="preview de imagen">
+        @if ($imagen_nueva)
+            NUEVA IMAGEN:
+            <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="preview de imagen">
         @endif
-    </div> --}}
+    </div>
+    {{-- <x-input-error :messages="$errors->get('imagen_nueva')" class="border border-red-700 bg-red-100 text-red-600 font-bold uppercase p-2 mt-2 text-xs" /> --}}
 
     <div class="my-5 w-80">
-
         <x-input-label for="imagen" :value="__('Imagen Actual')" />
-        <img src="{{ asset('storage/vacantes/' . $imagen) }}" alt="{{ 'Imagen Vacante' . $titulo }}">
-        <div>chucho</div>
-
+        <img src="{{ asset('storage/vacantes/' . $imagen) }}" alt="{{ 'Imagen Vacante de ' . $titulo }}">
+        <x-input-error :messages="$errors->get('imagen_nueva')" class="border border-red-700 bg-red-100 text-red-600 font-bold uppercase p-2 mt-2 text-xs" />
     </div>
 
-    {{-- <x-input-error :messages="$errors->get('imagen')" class="border border-red-700 bg-red-100 text-red-600 font-bold uppercase p-2 mt-2 text-xs" /> --}}
 
     <x-primary-button>Guardar Cambios</x-primary-button>
 

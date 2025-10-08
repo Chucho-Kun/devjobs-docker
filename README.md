@@ -11,3 +11,40 @@
 ```
 http://127.0.0.1:8025
 ```
+## Correct URL to storage images
+### A- app/livewire/CrearVacante.php
+```
+public function crearVacante()
+    {
+        $datos = $this->validate();    
+
+        // Almacenar la Imagen
+        $imagen = $this->imagen->store('vacantes','public');
+        $nombre_imagen = str_replace('vacantes/' , '' , $imagen);
+        
+        // Crear la vacante
+        Vacante::create([
+            'titulo' => $datos['titulo'],
+            'salario_id' => $datos['salario'],
+            'categoria_id' => $datos['categoria'],
+            'empresa' => $datos['empresa'],
+            'ultimo_dia' => $datos['ultimo_dia'],
+            'descripcion' => $datos['descripcion'],
+            'imagen' => $nombre_imagen,
+            'user_id' => Auth::user()->id
+        ]);
+        // Crear un mensaje
+        session()->flash('mensaje','La vacante se publicó correctamente');
+
+        // Redireccionar 
+        return redirect()->to('dashboard');
+    }
+```
+### B- resources/views/livewire/editar-vacante.blade.php
+```
+ <div class="my-5 w-80">
+        <x-input-label for="imagen" :value="__('Imagen Actual')" />
+        <img src="{{ asset('storage/vacantes/' . $imagen) }}" alt="{{ 'Imagen Vacante de ' . $titulo }}">
+        <x-input-error :messages="$errors->get('imagen_nueva')" class="border border-red-700 bg-red-100 text-red-600 font-bold uppercase p-2 mt-2 text-xs" />
+    </div>
+```

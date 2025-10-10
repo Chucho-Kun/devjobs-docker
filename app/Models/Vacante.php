@@ -20,6 +20,16 @@ class Vacante extends Model
         'user_id'
     ];
 
+    public function categoria()
+    {
+        return $this->belongsTo(Categorias::class);
+    }
+
+    public function salario()
+    {
+        return $this->belongsTo(Salario::class);
+    }
+
     protected $casts = [
         'ultimo_dia' => 'date'
     ];

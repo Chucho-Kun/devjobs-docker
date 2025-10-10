@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Vacante;
+use App\Notifications\NuevoCandidato;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -37,7 +38,7 @@ class PostularVacante extends Component
         ]);
         
         // Crear notificacion y enviar el email
-
+        $this->vacante->reclutador->notify( new NuevoCandidato( $this->vacante->id, $this->vacante->titulo, Auth::user()->id ) );
         
         // Mostrar aviso al usuario de ok
         session()->flash('mensaje' , 'Se envió correctamente tu información');

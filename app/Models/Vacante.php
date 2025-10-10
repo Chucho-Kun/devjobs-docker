@@ -30,6 +30,11 @@ class Vacante extends Model
         return $this->belongsTo(Salario::class);
     }
 
+    public function candidatos()
+    {
+        return $this->hasMany(Candidato::class);
+    }
+
     protected $casts = [
         'ultimo_dia' => 'date'
     ];

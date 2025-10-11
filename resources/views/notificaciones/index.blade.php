@@ -26,7 +26,10 @@
                                 </p>
                             </div>
                             <div class="mt-5">
-                                <a class="bg-indigo-500 p-3 text-sm uppercase font-bold text-white rounded-lg hover:bg-indigo-800" href="">Ver candidatos</a>
+                                <a 
+                                    class="bg-indigo-500 p-3 text-sm uppercase font-bold text-white rounded-lg hover:bg-indigo-800" 
+                                    href="{{ route('candidatos.index' , $notificacion->data['id_vacante']) }}"
+                                >Ver candidatos</a>
                             </div>
                         </div>
                     @empty

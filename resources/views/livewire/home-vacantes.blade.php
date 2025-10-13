@@ -1,4 +1,7 @@
 <div>
+
+    <livewire:filtrar-vacantes />
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto">
             <h3 class="font-extrabold text-4xl text-gray-700 mb-12">Vacantes Disponibles</h3>
@@ -12,7 +15,9 @@
                                 href="{{ route('vacantes.show' , $vacante->id) }}"
                             >{{ $vacante->titulo }}
                             </a>
-                            <p class="text-base text-gray-600 mb-3">{{ $vacante->empersa }}</p>
+                            <p class="text-base text-gray-600">{{ $vacante->empresa }}</p>
+                            <p class="text-xs font-bold text-gray-600 mb-3">{{ $vacante->categoria->categoria }}</p>
+                            <p class="text-base text-gray-600 mb-3">{{ $vacante->salario->salario }}</p>
                             <p class="font-bold text-xs text-gray-600">
                                 Fecha límite de postulación:
                                 <span class="font-normal">{{ $vacante->ultimo_dia->format('d/m/Y') }}</span>

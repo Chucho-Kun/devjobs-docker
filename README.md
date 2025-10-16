@@ -10,6 +10,9 @@
 ```
 http://127.0.0.1:8025
 ```
+## Correct databases migration
+```
+```
 ## Correct URL to storage images
 ### A- app/livewire/CrearVacante.php
 ```

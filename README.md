@@ -162,6 +162,7 @@ commands:
   - sed -ri "s/DB_CONNECTION=.*/DB_CONNECTION=mysql/g" .env
   - composer install
   - php artisan migrate:fresh || true
+  - php artisan db:seed
   - php artisan key:generate
   - php artisan storage:link
   - php artisan livewire:publish

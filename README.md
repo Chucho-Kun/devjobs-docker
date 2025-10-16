@@ -1,3 +1,5 @@
+# FullStack Platform LARAVEL / LIVEWIRE
+Job posting platform for recruiters and employees, contains a search engine for terms, categories and salaries. Laravel + MySQL + Livewire + Docker + Tailwindcss - (Full-Stack Job Posting)
 ## 🚀 Tech Stack
 
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
@@ -6,12 +8,15 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
+<img width="1136" height="636" alt="Captura de Pantalla 2025-10-16 a la(s) 13 47 57" src="https://github.com/user-attachments/assets/bfd01293-ae34-4a6f-b27f-f8c26d447211" />
+<img width="1229" height="837" alt="Captura de Pantalla 2025-10-16 a la(s) 13 49 01" src="https://github.com/user-attachments/assets/2aff2a4a-1c11-4db5-a37d-930f778eea8f" />
+<img width="1147" height="830" alt="Captura de Pantalla 2025-10-16 a la(s) 13 48 19" src="https://github.com/user-attachments/assets/06715611-1066-414e-b291-b588e856a4fd" />
+
+
+
 ## Mailpit Local URL
 ```
 http://127.0.0.1:8025
-```
-## Correct databases migration
-```
 ```
 ## Correct URL to storage images
 ### A- app/livewire/CrearVacante.php
